@@ -11,6 +11,9 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
 import {routing} from "./app.routing";
 import {TokenInterceptor} from "./core/interceptor";
+import { ListClaimComponent } from './list-claim/list-claim.component';
+import { AddClaimComponent } from './add-claim/add-claim.component';
+import { EditClaimComponent } from './edit-claim/edit-claim.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import {TokenInterceptor} from "./core/interceptor";
     LoginComponent,
     AddUserComponent,
     EditUserComponent,
-    ListUserComponent
+    ListUserComponent,
+    ListClaimComponent,
+    AddClaimComponent,
+    EditClaimComponent
   ],
   imports: [
     BrowserModule,

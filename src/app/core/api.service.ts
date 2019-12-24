@@ -33,4 +33,24 @@ export class ApiService {
   deleteUser(id: number): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(this.baseUrl + id);
   }
+
+  getClaims() : Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(this.baseUrl);
+  }
+
+  getClaimById(id: number): Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(this.baseUrl + id);
+  }
+
+  createClaim(claim: User): Observable<ApiResponse> {
+    return this.http.post<ApiResponse>(this.baseUrl, claim);
+  }
+
+  updateClaim(claim: User): Observable<ApiResponse> {
+    return this.http.put<ApiResponse>(this.baseUrl + claim.id, claim);
+  }
+
+  deleteClaim(id: number): Observable<ApiResponse> {
+    return this.http.delete<ApiResponse>(this.baseUrl + id);
+  }
 }
