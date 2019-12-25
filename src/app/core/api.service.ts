@@ -8,49 +8,50 @@ import {ApiResponse} from "../model/api.response";
 export class ApiService {
 
   constructor(private http: HttpClient) { }
-  baseUrl: string = 'http://3.6.58.197:8080/users/';
+  baseUrlUser: string = 'http://3.6.58.197:8080/users/';
+  baseUrlClaim: string = 'http://3.6.58.197:8080/claims/';
 
   login(loginPayload) : Observable<ApiResponse> {
     return this.http.post<ApiResponse>('http://3.6.58.197:8080/' + 'token/generate-token', loginPayload);
   }
 
   getUsers() : Observable<ApiResponse> {
-    return this.http.get<ApiResponse>(this.baseUrl);
+    return this.http.get<ApiResponse>(this.baseUrlUser);
   }
 
   getUserById(id: number): Observable<ApiResponse> {
-    return this.http.get<ApiResponse>(this.baseUrl + id);
+    return this.http.get<ApiResponse>(this.baseUrlUser + id);
   }
 
   createUser(user: User): Observable<ApiResponse> {
-    return this.http.post<ApiResponse>(this.baseUrl, user);
+    return this.http.post<ApiResponse>(this.baseUrlUser, user);
   }
 
   updateUser(user: User): Observable<ApiResponse> {
-    return this.http.put<ApiResponse>(this.baseUrl + user.id, user);
+    return this.http.put<ApiResponse>(this.baseUrlUser + user.id, user);
   }
 
   deleteUser(id: number): Observable<ApiResponse> {
-    return this.http.delete<ApiResponse>(this.baseUrl + id);
+    return this.http.delete<ApiResponse>(this.baseUrlUser + id);
   }
 
   getClaims() : Observable<ApiResponse> {
-    return this.http.get<ApiResponse>(this.baseUrl);
+    return this.http.get<ApiResponse>(this.baseUrlClaim);
   }
 
   getClaimById(id: number): Observable<ApiResponse> {
-    return this.http.get<ApiResponse>(this.baseUrl + id);
+    return this.http.get<ApiResponse>(this.baseUrlClaim + id);
   }
 
   createClaim(claim: User): Observable<ApiResponse> {
-    return this.http.post<ApiResponse>(this.baseUrl, claim);
+    return this.http.post<ApiResponse>(this.baseUrlClaim, claim);
   }
 
   updateClaim(claim: User): Observable<ApiResponse> {
-    return this.http.put<ApiResponse>(this.baseUrl + claim.id, claim);
+    return this.http.put<ApiResponse>(this.baseUrlClaim + claim.id, claim);
   }
 
   deleteClaim(id: number): Observable<ApiResponse> {
-    return this.http.delete<ApiResponse>(this.baseUrl + id);
+    return this.http.delete<ApiResponse>(this.baseUrlClaim + id);
   }
 }
