@@ -18,9 +18,9 @@ export class AddClaimComponent implements OnInit {
     this.addForm = this.formBuilder.group({
       id: [],
       category: ['', Validators.required],
-      billdate: ['', Validators.required],
-      billno: ['', Validators.required],
-      claimamount: ['', Validators.required]
+      billDate: ['', Validators.required],
+      billNo: ['', Validators.required],
+      claimAmount: ['', Validators.required]
     });
 
   }

@@ -17,9 +17,9 @@
     <tbody>
     <tr *ngFor="let claim of claims">
       <td>{{claim.catergory}}</td>
-      <td>{{claim.billdate}}</td>
-      <td>{{claim.billno}}</td>
-      <td>{{claim.claimamount}}</td>
+      <td>{{claim.billDate}}</td>
+      <td>{{claim.billNo}}</td>
+      <td>{{claim.claimAmount}}</td>
       <td><button class="btn btn-success" (click)="deleteClaim(claim)"> Delete</button>
         <button class="btn btn-success" (click)="editClaim(claim)" style="margin-left: 20px;"> Edit</button></td>
     </tr>
