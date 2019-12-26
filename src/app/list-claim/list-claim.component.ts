@@ -26,7 +26,7 @@ export class ListClaimComponent implements OnInit {
   }
 
   deleteClaim(claim: User): void {
-    this.apiService.deleteUser(claim.id)
+    this.apiService.deleteClaim(claim.id)
       .subscribe( data => {
         this.claims = this.claims.filter(u => u !== claim);
       })
@@ -35,7 +35,7 @@ export class ListClaimComponent implements OnInit {
   editClaim(claim: User): void {
     window.localStorage.removeItem("editUserId");
     window.localStorage.setItem("editUserId", claim.id.toString());
-    this.router.navigate(['edit-user']);
+    this.router.navigate(['edit-claim']);
   };
 
   addClaim(): void {
